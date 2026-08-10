@@ -16,30 +16,27 @@ const Hero = () => {
   return (
     <section
       id="home"
-      data-page-hero
-      className="relative flex min-h-screen items-center overflow-hidden bg-slate-950"
+      className="relative flex min-h-screen w-full items-center overflow-hidden bg-slate-950 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage: "url('/images/hero/bg.jpg')",
+      }}
     >
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/hero/hero-bg.jpg"
-          alt=""
-          className="h-full w-full object-cover"
-        />
-      </div>
-
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-slate-950/65" />
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/60 to-slate-950/30" />
+      {/* Left-to-Right Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/30" />
+
+      {/* Bottom Gradient */}
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950/80 to-transparent" />
 
       {/* Decorative Glow */}
-      <div className="absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-blue-600/20 blur-3xl" />
-      <div className="absolute -right-32 bottom-1/4 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-blue-600/20 blur-3xl" />
+
+      <div className="pointer-events-none absolute -right-32 bottom-1/4 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
 
       {/* Hero Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-20 sm:px-8 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-24 sm:px-8 lg:px-10">
         <div className="max-w-4xl">
           {/* Eyebrow */}
           <motion.div
@@ -135,6 +132,7 @@ const Hero = () => {
             className="mt-10 flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-400"
           >
             <span className="h-px w-8 bg-slate-600" />
+
             <span>Precision. Performance. Excellence.</span>
           </motion.div>
         </div>
