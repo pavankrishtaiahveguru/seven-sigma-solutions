@@ -21,27 +21,31 @@ const offerings = [
 const strengths = [
   {
     icon: FiUsers,
-    title: "Experienced Mentors",
-    description:
-      "Learn from experienced industry professionals who provide practical guidance throughout your career journey.",
+    title: "Personalized mentorship from experienced professionals",
   },
   {
     icon: FiBookOpen,
-    title: "Practical Learning",
-    description:
-      "Build real-world skills through hands-on learning focused on what employers value.",
+    title: "Practical, real-world learning approach",
   },
   {
     icon: FiTarget,
-    title: "Personalized Plans",
-    description:
-      "Your learning and career path is tailored to your background, goals, experience, and desired direction.",
+    title: "Individual attention and career guidance",
   },
   {
     icon: FiCheckCircle,
-    title: "Dedicated Support",
-    description:
-      "Receive continued career guidance, interview preparation, and professional support as you progress.",
+    title: "Resume and interview preparation",
+  },
+  {
+    icon: FiBookOpen,
+    title: "Industry-focused training",
+  },
+  {
+    icon: FiTarget,
+    title: "Flexible learning options",
+  },
+  {
+    icon: FiUsers,
+    title: "End-to-end support throughout your career journey",
   },
 ];
 
@@ -291,6 +295,7 @@ const About = () => {
         <div className="pointer-events-none absolute -right-40 top-20 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
 
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -302,18 +307,19 @@ const About = () => {
               <span className="h-px w-8 bg-blue-500" />
 
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400">
-                Why 7Sigma
+                Why Choose 7Sigma Solutions?
               </span>
 
               <span className="h-px w-8 bg-blue-500" />
             </div>
 
             <h2 className="text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-              Built Around
-              <span className="text-blue-500"> Your Success.</span>
+              Why Choose
+              <span className="text-blue-500"> 7Sigma Solutions?</span>
             </h2>
           </motion.div>
 
+          {/* Client Shared Points */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -322,13 +328,13 @@ const About = () => {
               hidden: {},
               visible: {
                 transition: {
-                  staggerChildren: 0.1,
+                  staggerChildren: 0.08,
                 },
               },
             }}
-            className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4"
+            className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
           >
-            {strengths.map((strength) => {
+            {strengths.map((strength, index) => {
               const Icon = strength.icon;
 
               return (
@@ -349,20 +355,39 @@ const About = () => {
                   }}
                   className="group rounded-2xl border border-white/10 bg-[#070707] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-blue-500/50 hover:bg-slate-900 sm:p-7"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-400 transition-all duration-500 group-hover:border-blue-500 group-hover:bg-blue-600 group-hover:text-white">
-                    <Icon size={20} />
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-400 transition-all duration-500 group-hover:border-blue-500 group-hover:bg-blue-600 group-hover:text-white">
+                      <Icon size={20} />
+                    </div>
+
+                    <div>
+                      <span className="text-xs font-semibold tracking-wider text-blue-500">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+
+                      <h3 className="mt-2 text-base font-semibold leading-6 text-white transition-colors duration-300 group-hover:text-blue-400">
+                        {strength.title}
+                      </h3>
+                    </div>
                   </div>
-
-                  <h3 className="mt-6 text-lg font-semibold text-white transition-colors duration-300 group-hover:text-blue-400">
-                    {strength.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm leading-6 text-slate-400">
-                    {strength.description}
-                  </p>
                 </motion.article>
               );
             })}
+          </motion.div>
+
+          {/* Client Shared Supporting Content */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7 }}
+            className="mx-auto mt-12 max-w-4xl rounded-2xl border border-white/10 bg-[#070707] p-7 text-center sm:p-9"
+          >
+            <p className="text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
+              At 7Sigma Solutions, our goal is to equip you with the knowledge,
+              confidence, and professional skills needed to pursue new career
+              opportunities and achieve long-term success.
+            </p>
           </motion.div>
         </div>
       </section>

@@ -42,25 +42,47 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Temporary frontend submission
-    console.log("Contact Form:", formData);
+    setIsSubmitted(false);
 
-    setIsSubmitted(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      service: "",
-      message: "",
-    });
+      const data = await response.json();
 
-    setTimeout(() => {
-      setIsSubmitted(false);
-    }, 4000);
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send message.");
+      }
+
+      setIsSubmitted(true);
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: "",
+      });
+
+      setTimeout(() => {
+        setIsSubmitted(false);
+      }, 4000);
+    } catch (error) {
+      console.error("Contact form error:", error);
+
+      alert(
+        error.message ||
+          "Unable to send your message right now. Please try again later.",
+      );
+    }
   };
 
   return (

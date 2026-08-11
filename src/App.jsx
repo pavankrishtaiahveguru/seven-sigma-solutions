@@ -10,6 +10,7 @@ import Footer from "./components/layout/Footer";
 import ScrollToTop from "./components/layout/ScrollToTop";
 import FloatingScrollToTop from "./components/common/ScrollToTop";
 import WhyUs from "./pages/WhyUs";
+import FloatingWhatsApp from "./components/common/FloatingWhatsApp";
 
 export default function App() {
   return (
@@ -25,7 +26,7 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/why-us" element={<WhyUs />} />
       </Routes>
-
+      <FloatingWhatsApp />
       <Footer />
     </BrowserRouter>
   );
