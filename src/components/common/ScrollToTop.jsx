@@ -39,24 +39,24 @@ const ScrollToTop = () => {
     });
   };
 
-  return (
-    <motion.button
-      type="button"
-      onClick={scrollToTop}
-      initial={{ opacity: 0, scale: 0.8 }}
-      animate={{
-        opacity: showTopButton ? 1 : 0,
-        scale: showTopButton ? 1 : 0.8,
-      }}
-      transition={{ duration: 0.25 }}
-      className={`fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:bg-blue-700 ${
-        showTopButton ? "pointer-events-auto" : "pointer-events-none"
-      }`}
-      aria-label="Scroll to top"
-    >
-      <FiArrowUp />
-    </motion.button>
-  );
+  // return (
+  //   <motion.button
+  //     type="button"
+  //     onClick={scrollToTop}
+  //     initial={{ opacity: 0, scale: 0.8 }}
+  //     animate={{
+  //       opacity: showTopButton ? 1 : 0,
+  //       scale: showTopButton ? 1 : 0.8,
+  //     }}
+  //     transition={{ duration: 0.25 }}
+  //     className={`fixed bottom-6 right-6 z-40 flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:bg-blue-700 ${
+  //       showTopButton ? "pointer-events-auto" : "pointer-events-none"
+  //     }`}
+  //     aria-label="Scroll to top"
+  //   >
+  //     <FiArrowUp />
+  //   </motion.button>
+  // );
 };
 
 export default ScrollToTop;

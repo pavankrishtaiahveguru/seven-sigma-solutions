@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-// import ScrollToTop from "./components/layout/ScrollToTop";
+import ScrollToTop from "./components/layout/ScrollToTop";
 import FloatingScrollToTop from "./components/common/ScrollToTop";
 import WhyUs from "./pages/WhyUs";
 import FloatingWhatsApp from "./components/common/FloatingWhatsApp";
@@ -16,7 +16,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      {/* <ScrollToTop /> */}
+      <ScrollToTop />
       <FloatingScrollToTop />
 
       <Routes>
