@@ -42,7 +42,7 @@ export default function FloatingWhatsApp() {
       className="group fixed z-[9999] flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_12px_35px_rgba(37,211,102,0.45)] transition-all duration-300 hover:bg-[#1EBE5D] sm:h-16 sm:w-16"
       style={{
         right: "3rem",
-        bottom: "5rem",
+        bottom: "3rem",
       }}
     >
       {/* Pulse */}
