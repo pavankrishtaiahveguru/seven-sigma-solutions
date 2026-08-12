@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { FaWhatsapp } from "react-icons/fa";
 
-const WHATSAPP_NUMBER = "183";
+const WHATSAPP_NUMBER = "19454019183";
 
 export default function FloatingWhatsApp() {
   return (
