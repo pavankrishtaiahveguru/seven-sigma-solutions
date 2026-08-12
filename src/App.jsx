@@ -11,6 +11,7 @@ import ScrollToTop from "./components/layout/ScrollToTop";
 import FloatingScrollToTop from "./components/common/ScrollToTop";
 import WhyUs from "./pages/WhyUs";
 import FloatingWhatsApp from "./components/common/FloatingWhatsApp";
+import PageNotFound from "./pages/PageNotFound";
 
 export default function App() {
   return (
@@ -25,6 +26,8 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/why-us" element={<WhyUs />} />
+        {/* Page not found */}
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <FloatingWhatsApp />
       <Footer />
