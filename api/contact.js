@@ -1,5 +1,8 @@
 import { Resend } from "resend";
-
+console.log(
+  "RESEND_API_KEY exists:",
+  Boolean(process.env.RESEND_API_KEY)
+);
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req, res) {
@@ -12,7 +15,17 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, phone, service, message } = req.body;
+    // Check API key
+    if (!process.env.RESEND_API_KEY) {
+      console.error("RESEND_API_KEY is missing.");
+
+      return res.status(500).json({
+        success: false,
+        message: "Email service is not configured.",
+      });
+    }
+
+    const { name, email, phone, service, message } = req.body || {};
 
     // Validate required fields
     if (!name || !email || !service || !message) {
@@ -22,7 +35,6 @@ export default async function handler(req, res) {
       });
     }
 
-    // Send email using Resend
     const { data, error } = await resend.emails.send({
       from: "7Sigma Solutions <onboarding@resend.dev>",
       to: ["sigma7tech@outlook.com"],
@@ -34,7 +46,10 @@ export default async function handler(req, res) {
         <html>
           <head>
             <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1.0"
+            />
             <title>New Contact Inquiry</title>
           </head>
 
@@ -57,7 +72,6 @@ export default async function handler(req, res) {
                 border: 1px solid #e2e8f0;
               "
             >
-              <!-- Header -->
               <div
                 style="
                   background: #0f172a;
@@ -86,7 +100,6 @@ export default async function handler(req, res) {
                 </p>
               </div>
 
-              <!-- Content -->
               <div style="padding: 30px;">
                 <h2
                   style="
@@ -188,7 +201,6 @@ export default async function handler(req, res) {
                 </div>
               </div>
 
-              <!-- Footer -->
               <div
                 style="
                   padding: 20px 30px;
@@ -218,9 +230,11 @@ export default async function handler(req, res) {
 
       return res.status(500).json({
         success: false,
-        message: "Failed to send your message.",
+        message: error.message || "Failed to send your message.",
       });
     }
+
+    console.log("Email sent successfully:", data?.id);
 
     return res.status(200).json({
       success: true,
@@ -233,7 +247,9 @@ export default async function handler(req, res) {
 
     return res.status(500).json({
       success: false,
-      message: "Unable to send your message right now. Please try again later.",
+      message:
+        error?.message ||
+        "Unable to send your message right now. Please try again later.",
     });
   }
 }
