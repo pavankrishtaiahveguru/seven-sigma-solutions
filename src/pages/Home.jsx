@@ -1,16 +1,16 @@
 import Hero from "../components/home/Hero";
 import Services from "../components/home/Services";
-import WhyChooseUs from "../components/home/WhyChooseUs";
+import OurApproach from "../components/home/OurApproach";
 import CTA from "../components/home/CTA";
 
 const Home = () => {
   return (
-    <>
+    <main>
       <Hero />
       <Services />
-      <WhyChooseUs />
+      <OurApproach />
       <CTA />
-    </>
+    </main>
   );
 };
 
