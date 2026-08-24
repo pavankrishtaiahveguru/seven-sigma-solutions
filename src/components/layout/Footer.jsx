@@ -7,6 +7,7 @@ import {
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import DevelopedByStaffArc from "../DevelopedByStaffArc.jsx";
+import HomeLink from "../common/HomeLink";
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -17,11 +18,11 @@ const quickLinks = [
 ];
 
 const services = [
-  "Career Consultation",
-  "Technical Skill Development",
-  "Resume Optimization",
-  "Interview Preparation",
-  "Career Mentorship",
+  "Career & Professional Development",
+  "Business Solutions",
+  "Vendorship & Vendor Management",
+  "Workforce & Talent Solutions",
+  "Professional Partnerships",
 ];
 
 export default function Footer() {
@@ -34,13 +35,13 @@ export default function Footer() {
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.2fr_1.4fr] lg:gap-10">
           {/* Company */}
           <div>
-            <Link to="/" className="inline-block">
+            <HomeLink className="inline-block">
               <img
                 src="/images/logo/seven-sigma-logo.jpeg"
                 alt="7Sigma Solutions"
                 className="h-16 w-auto object-contain"
               />
-            </Link>
+            </HomeLink>
 
             <p className="mt-6 max-w-sm text-sm leading-7 text-slate-400">
               Empowering careers through personalized mentorship, practical
@@ -67,12 +68,18 @@ export default function Footer() {
             <ul className="mt-6 space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-sm text-slate-400 transition-colors duration-300 hover:text-blue-400"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.href === "/" ? (
+                    <HomeLink className="text-sm text-slate-400 transition-colors duration-300 hover:text-blue-400">
+                      {link.name}
+                    </HomeLink>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-sm text-slate-400 transition-colors duration-300 hover:text-blue-400"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
+import HomeLink from "../common/HomeLink";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -48,8 +49,7 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-10">
         {/* Logo + Company Name */}
-        <Link
-          to="/"
+        <HomeLink
           onClick={handleNavClick}
           className="relative z-50 flex items-center gap-3"
         >
@@ -76,25 +76,29 @@ export default function Navbar() {
               Precision. Performance. Excellence.
             </span>
           </div>
-        </Link>
+        </HomeLink>
 
         {/* Desktop Navigation */}
         <div className="hidden items-center gap-8 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.href}
-              className={`relative text-sm font-medium transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:transition-all after:duration-300 ${
-                location.pathname === link.href
-                  ? "text-blue-600 after:w-full after:bg-blue-600"
-                  : isScrolled
-                    ? "text-slate-500 hover:text-blue-600 after:w-0 after:bg-blue-600 hover:after:w-full"
-                    : "text-blue-600 hover:text-blue-600 after:w-0 after:bg-white hover:after:w-full"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const NavigationLink = link.href === "/" ? HomeLink : Link;
+
+            return (
+              <NavigationLink
+                key={link.name}
+                to={link.href}
+                className={`relative text-sm font-medium transition-colors duration-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:transition-all after:duration-300 ${
+                  location.pathname === link.href
+                    ? "text-blue-600 after:w-full after:bg-blue-600"
+                    : isScrolled
+                      ? "text-slate-500 hover:text-blue-600 after:w-0 after:bg-blue-600 hover:after:w-full"
+                      : "text-blue-600 hover:text-blue-600 after:w-0 after:bg-white hover:after:w-full"
+                }`}
+              >
+                {link.name}
+              </NavigationLink>
+            );
+          })}
 
           <Link
             to="/contact"

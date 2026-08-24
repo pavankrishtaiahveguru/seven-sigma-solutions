@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { FiArrowLeft, FiArrowUpRight, FiHome } from "react-icons/fi";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import HomeLink from "../components/common/HomeLink";
 
 const PageNotFound = () => {
   const navigate = useNavigate();
@@ -103,10 +104,7 @@ const PageNotFound = () => {
           className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
         >
           {/* Home */}
-          <Link
-            to="/"
-            className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/30 sm:w-auto"
-          >
+          <HomeLink className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/20 transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/30 sm:w-auto">
             <FiHome
               size={17}
               className="transition-transform duration-300 group-hover:-translate-y-0.5"
@@ -116,7 +114,7 @@ const PageNotFound = () => {
               size={17}
               className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
             />
-          </Link>
+          </HomeLink>
 
           {/* Go Back */}
           <button
