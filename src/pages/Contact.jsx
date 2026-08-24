@@ -10,16 +10,11 @@ import {
 } from "react-icons/fi";
 
 const services = [
-  "Career Consultation",
-  "Technical Skill Development",
-  "Resume Building & Optimization",
-  "LinkedIn Profile Enhancement",
-  "Interview Preparation",
-  "Job Search Guidance",
-  "Career Mentorship",
-  "Professional Development",
-  "Personalized Learning Plans",
-  "Ongoing Career Support",
+  "Career & Professional Development",
+  "Business Solutions",
+  "Vendorship & Vendor Management",
+  "Workforce & Talent Solutions",
+  "Professional Partnerships",
 ];
 
 const Contact = () => {
