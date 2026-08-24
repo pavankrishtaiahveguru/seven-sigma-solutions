@@ -1,162 +1,116 @@
 import { motion } from "framer-motion";
 import {
   FiArrowUpRight,
-  FiBookOpen,
   FiBriefcase,
-  FiCheckCircle,
-  FiCompass,
-  FiEdit3,
-  FiMessageSquare,
-  FiTarget,
-  FiTrendingUp,
-  FiUserCheck,
   FiUsers,
+  FiUserCheck,
+  FiTarget,
+  FiLink,
 } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import GlobalCTA from "../components/common/GlobalCTA";
 
 const services = [
   {
     number: "01",
-    title: "Career Consultation",
+    title: "Career & Professional Development",
     description:
-      "Receive one-on-one guidance to understand your career goals, evaluate your current skills, and create a personalized roadmap for success.",
+      "Helping professionals build stronger careers and make informed career decisions.",
     points: [
-      "Career Goal Assessment",
-      "Skill & Experience Evaluation",
-      "Personalized Career Roadmap",
+      "Career guidance and strategy",
+      "Resume and professional profile development",
+      "LinkedIn optimization",
+      "Interview preparation",
+      "Professional development",
+      "Career transition guidance",
+      "Job-search strategy",
+      "Mentorship and professional guidance",
     ],
-    icon: FiCompass,
-    image: "/images/services/career-consultation.jpg",
+    icon: FiTarget,
   },
   {
     number: "02",
-    title: "Technical Skill Development",
+    title: "Business Solutions",
     description:
-      "Learn industry-relevant concepts and practical skills through structured, hands-on training designed to prepare you for real-world work environments.",
+      "Practical support for businesses looking to improve their operations, workforce, and overall performance.",
     points: [
-      "Industry-Relevant Skills",
-      "Hands-On Learning",
-      "Real-World Practice",
+      "Business consulting and support",
+      "Workforce planning",
+      "Operational support",
+      "Process improvement",
+      "Business coordination",
+      "Talent and resource support",
+      "Strategic business guidance",
     ],
-    icon: FiBookOpen,
-    image: "/images/services/technical-skill-development.jpg",
+    icon: FiBriefcase,
   },
   {
     number: "03",
-    title: "Resume Building & Optimization",
+    title: "Vendorship & Vendor Management",
+    subtitle: "Connecting Businesses With the Right Vendors",
     description:
-      "Stand out to recruiters with a professionally crafted resume that highlights your strengths, experience, and accomplishments while aligning with industry standards.",
+      "Finding the right vendor can take time. Managing multiple vendors can take even more. Seven Sigma Solutions helps businesses identify, connect, coordinate, and maintain relationships with vendors that support their operational needs.",
     points: [
-      "Professional Resume Review",
-      "ATS-Friendly Optimization",
-      "Achievement-Focused Content",
+      "Vendor sourcing",
+      "Vendor identification and matching",
+      "Vendor onboarding support",
+      "Vendor coordination",
+      "Vendor relationship management",
+      "Vendor communication",
+      "Service and performance coordination",
+      "Procurement support",
+      "Vendor documentation support",
+      "Multi-vendor coordination",
     ],
-    icon: FiEdit3,
-    image: "/images/services/resume-building.jpg",
+    footer:
+      "Our goal is simple: help businesses spend less time searching for vendors and more time focusing on their business.",
+    icon: FiLink,
   },
   {
     number: "04",
-    title: "LinkedIn Profile Enhancement",
+    title: "Workforce & Talent Solutions",
     description:
-      "Build a strong professional presence with an optimized LinkedIn profile that attracts recruiters and increases your visibility in the job market.",
+      "Helping businesses find the right resources while helping professionals connect with opportunities.",
+    intro: "We can support businesses with:",
     points: [
-      "Profile Optimization",
-      "Professional Branding",
-      "Recruiter Visibility",
+      "Talent sourcing",
+      "Workforce coordination",
+      "Staffing support",
+      "Candidate connections",
+      "Resource planning",
+      "Professional referrals",
+      "Workforce-related business solutions",
     ],
-    icon: FiTrendingUp,
-    image: "/images/services/linkedin-profile.jpg",
+    icon: FiUsers,
   },
   {
     number: "05",
-    title: "Interview Preparation",
+    title: "Professional Partnerships",
     description:
-      "Boost your confidence through mock interviews, technical interview coaching, behavioral interview practice, and personalized feedback.",
+      "We believe strong businesses are built through strong relationships.",
     points: [
-      "Mock Interviews",
-      "Technical Interview Practice",
-      "Behavioral Interview Coaching",
+      "Business connections",
+      "Professional connections",
+      "Vendor relationships",
+      "Service provider connections",
+      "Mutually beneficial partnerships",
     ],
-    icon: FiMessageSquare,
-    image: "/images/services/interview-preparation.jpg",
-  },
-  {
-    number: "06",
-    title: "Job Search Guidance",
-    description:
-      "Learn effective job search strategies, networking techniques, and best practices for applying to positions that match your skills and career aspirations.",
-    points: [
-      "Job Search Strategies",
-      "Networking Guidance",
-      "Application Best Practices",
-    ],
-    icon: FiTarget,
-    image: "/images/services/job-search.jpg",
-  },
-  {
-    number: "07",
-    title: "Career Mentorship",
-    description:
-      "Work with experienced professionals who provide continuous guidance, answer your questions, and help you navigate challenges throughout your career journey.",
-    points: [
-      "One-on-One Mentorship",
-      "Professional Guidance",
-      "Career Progress Support",
-    ],
-    icon: FiUsers,
-    image: "/images/services/career-mentorship.jpg",
-  },
-  {
-    number: "08",
-    title: "Professional Development",
-    description:
-      "Strengthen your communication, problem-solving, teamwork, leadership, and workplace professionalism to excel in today's competitive environment.",
-    points: [
-      "Communication Skills",
-      "Leadership Development",
-      "Workplace Professionalism",
-    ],
-    icon: FiBriefcase,
-    image: "/images/services/professional-development.jpg",
-  },
-  {
-    number: "09",
-    title: "Personalized Learning Plans",
-    description:
-      "Every learner has unique goals. We create customized learning paths based on your background, experience, and desired career direction.",
-    points: [
-      "Customized Learning Path",
-      "Goal-Based Planning",
-      "Progress-Focused Approach",
-    ],
+    footer:
+      "Seven Sigma Solutions works to create connections between businesses, professionals, vendors, and service providers, helping create opportunities for mutually beneficial partnerships.",
     icon: FiUserCheck,
-    image: "/images/services/personalized-learning.jpg",
-  },
-  {
-    number: "10",
-    title: "Ongoing Career Support",
-    description:
-      "Our support doesn't end after training. We continue to assist you with interview preparation, career advice, and professional guidance as you progress in your career.",
-    points: [
-      "Continued Career Guidance",
-      "Interview Support",
-      "Professional Advice",
-    ],
-    icon: FiCheckCircle,
-    image: "/images/services/ongoing-career-support.jpg",
   },
 ];
 
 const serviceVariants = {
   hidden: {
     opacity: 0,
-    y: 60,
+    y: 50,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.8,
+      duration: 0.7,
       ease: "easeOut",
     },
   },
@@ -166,46 +120,49 @@ const Services = () => {
   return (
     <main className="min-h-screen overflow-hidden bg-black text-white">
       {/* =====================================================
-          PAGE HERO
+          HERO
       ====================================================== */}
       <section
         data-page-hero
-        className="relative overflow-hidden border-b border-white/5 bg-[#050505] pt-32 sm:pt-36 lg:pt-40"
+        className="relative overflow-hidden border-b border-white/5 bg-[#050505] px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-10 lg:pb-28 lg:pt-40"
       >
-        {/* Background Glow */}
+        {/* Background Glows */}
         <div className="pointer-events-none absolute left-1/2 top-0 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-blue-600/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-5 pb-20 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28">
+        <div className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-blue-600/5 blur-3xl" />
+
+        <div className="relative mx-auto max-w-4xl text-center">
           <motion.div
-            initial={{ opacity: 0, y: 35 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
               duration: 0.8,
               ease: "easeOut",
             }}
-            className="mx-auto max-w-3xl text-center"
           >
             {/* Label */}
             <div className="mb-5 flex items-center justify-center gap-3">
               <span className="h-px w-8 bg-blue-500" />
 
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 sm:text-sm">
-                Our Expertise
+                Our Services
               </span>
 
               <span className="h-px w-8 bg-blue-500" />
             </div>
 
             {/* Heading */}
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Services We <span className="text-blue-500">Offer</span>
+            <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Solutions Built
+              <br />
+              <span className="text-blue-500">Around Your Needs.</span>
             </h1>
 
             {/* Description */}
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base sm:leading-7">
-              Comprehensive career development services designed to help you
-              gain the skills, confidence, and guidance needed to achieve your
-              professional goals.
+            <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 lg:text-lg">
+              Every client has a different challenge. That&apos;s why Seven
+              Sigma Solutions offers a range of services designed to support
+              individuals, businesses, and professional partnerships.
             </p>
           </motion.div>
         </div>
@@ -215,10 +172,10 @@ const Services = () => {
           SERVICES
       ====================================================== */}
       <section className="relative bg-black">
-        {/* Decorative Glow */}
+        {/* Decorative Glows */}
         <div className="pointer-events-none absolute left-0 top-[10%] h-96 w-96 rounded-full bg-blue-600/5 blur-3xl" />
 
-        <div className="pointer-events-none absolute right-0 top-[45%] h-96 w-96 rounded-full bg-blue-600/5 blur-3xl" />
+        <div className="pointer-events-none absolute right-0 top-[50%] h-96 w-96 rounded-full bg-blue-600/5 blur-3xl" />
 
         {services.map((service, index) => {
           const Icon = service.icon;
@@ -232,22 +189,20 @@ const Services = () => {
               whileInView="visible"
               viewport={{
                 once: true,
-                amount: 0.15,
+                amount: 0.12,
               }}
-              className={`relative border-b border-white/[0.04] ${
+              className={`relative border-b border-white/[0.05] ${
                 index % 2 === 0 ? "bg-[#050505]" : "bg-black"
               }`}
             >
               <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
                 <div
-                  className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
+                  className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-20 ${
                     isReversed ? "lg:[&>*:first-child]:order-2" : ""
                   }`}
                 >
-                  {/* =================================================
-                      CONTENT
-                  ================================================== */}
-                  <div className={`${isReversed ? "lg:pl-6" : "lg:pr-6"}`}>
+                  {/* Content */}
+                  <div className={isReversed ? "lg:pl-6" : "lg:pr-6"}>
                     {/* Number + Icon */}
                     <div className="flex items-center gap-4">
                       <span className="text-sm font-semibold tracking-[0.2em] text-blue-500">
@@ -256,51 +211,72 @@ const Services = () => {
 
                       <span className="h-px w-10 bg-blue-500/40" />
 
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-400">
-                        <Icon size={19} />
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-400">
+                        <Icon size={20} />
                       </div>
                     </div>
 
-                    {/* Heading */}
+                    {/* Title */}
                     <h2 className="mt-6 text-2xl font-bold leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
                       {service.title}
                     </h2>
 
+                    {/* Subtitle */}
+                    {service.subtitle && (
+                      <h3 className="mt-3 text-base font-semibold text-blue-400 sm:text-lg">
+                        {service.subtitle}
+                      </h3>
+                    )}
+
                     {/* Description */}
-                    <p className="mt-5 max-w-xl text-sm leading-6 text-slate-400 sm:text-base sm:leading-7">
+                    <p className="mt-5 max-w-xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8">
                       {service.description}
                     </p>
 
+                    {/* Intro */}
+                    {service.intro && (
+                      <p className="mt-6 text-sm font-semibold text-slate-200">
+                        {service.intro}
+                      </p>
+                    )}
+
                     {/* Points */}
-                    <ul className="mt-6 space-y-3">
+                    <ul className="mt-5 grid gap-3 sm:grid-cols-2">
                       {service.points.map((point) => (
                         <li
                           key={point}
-                          className="flex items-center gap-3 text-sm text-slate-300"
+                          className="flex items-start gap-3 text-sm leading-6 text-slate-300"
                         >
-                          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
 
                           <span>{point}</span>
                         </li>
                       ))}
                     </ul>
 
+                    {/* Footer Message */}
+                    {service.footer && (
+                      <div className="mt-7 border-l-2 border-blue-500/60 pl-4">
+                        <p className="text-sm leading-7 text-slate-400">
+                          {service.footer}
+                        </p>
+                      </div>
+                    )}
+
                     {/* CTA */}
                     <Link
                       to="/contact"
-                      className="group mt-7 inline-flex items-center gap-2 rounded-md bg-blue-600 px-5 py-2.5 text-xs font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 sm:text-sm"
+                      className="group mt-8 inline-flex items-center gap-2 rounded-md bg-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20"
                     >
-                      Get Started
+                      Discuss Your Needs
                       <FiArrowUpRight
-                        size={16}
+                        size={17}
                         className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                       />
                     </Link>
                   </div>
 
-                  {/* =================================================
-                      IMAGE
-                  ================================================== */}
+                  {/* Visual */}
                   <motion.div
                     initial={{
                       opacity: 0,
@@ -322,25 +298,36 @@ const Services = () => {
                     className="relative"
                   >
                     {/* Glow */}
-                    <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-blue-600/5 blur-2xl transition-all duration-700 group-hover:bg-blue-600/10" />
+                    <div className="pointer-events-none absolute -inset-5 rounded-3xl bg-blue-600/5 blur-2xl" />
 
-                    {/* Image Container */}
-                    <div className="group relative overflow-hidden rounded-xl border border-white/10 bg-[#070707] p-1 transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_0_35px_rgba(14,165,233,0.12)]">
-                      <div className="relative overflow-hidden rounded-lg">
-                        <img
-                          src={service.image}
-                          alt={service.title}
-                          loading={index > 1 ? "lazy" : "eager"}
-                          className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        />
+                    {/* Visual Card */}
+                    <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-blue-500/[0.08] via-white/[0.02] to-transparent p-8 transition-all duration-500 hover:border-blue-500/30 sm:p-10 lg:p-12">
+                      {/* Large Number */}
+                      <span className="absolute -right-5 -top-8 text-[160px] font-bold leading-none text-white/[0.025]">
+                        {service.number}
+                      </span>
 
-                        {/* Image Overlay */}
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-70" />
+                      {/* Icon */}
+                      <div className="relative flex h-20 w-20 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10 text-blue-400 transition-all duration-500 group-hover:border-blue-500 group-hover:bg-blue-600 group-hover:text-white">
+                        <Icon size={36} />
+                      </div>
 
-                        {/* Image Number */}
-                        <div className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/60 text-xs font-semibold text-white backdrop-blur-md">
-                          {service.number}
-                        </div>
+                      {/* Visual Heading */}
+                      <div className="relative mt-10">
+                        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400">
+                          Seven Sigma Solutions
+                        </p>
+
+                        <h3 className="mt-3 max-w-sm text-2xl font-bold leading-tight text-white sm:text-3xl">
+                          {service.title}
+                        </h3>
+
+                        <div className="mt-7 h-px w-20 bg-blue-500/50" />
+
+                        <p className="mt-5 max-w-sm text-sm leading-7 text-slate-500">
+                          Practical, professional solutions designed around real
+                          needs and meaningful results.
+                        </p>
                       </div>
                     </div>
                   </motion.div>
@@ -352,11 +339,11 @@ const Services = () => {
       </section>
 
       {/* =====================================================
-          BOTTOM CTA
+          FINAL CTA
       ====================================================== */}
-      <section className="relative overflow-hidden border-t border-white/5 bg-[#050505] py-20 sm:py-24 lg:py-28">
+      <section className="relative overflow-hidden border-t border-white/5 bg-[#050505] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
         {/* Glow */}
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-3xl" />
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[450px] w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-3xl" />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -367,56 +354,19 @@ const Services = () => {
           }}
           transition={{
             duration: 0.7,
+            ease: "easeOut",
           }}
-          className="relative mx-auto max-w-3xl px-5 text-center sm:px-8"
+          className="relative mx-auto max-w-4xl px-0 text-center"
         >
-          {/* Label */}
-          <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-8 bg-blue-500" />
-
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400">
-              Start Your Journey
-            </span>
-
-            <span className="h-px w-8 bg-blue-500" />
-          </div>
-
-          {/* Heading */}
-          <h2 className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Ready to Take the Next Step
-            <span className="block text-blue-500">in Your Career?</span>
-          </h2>
-
           {/* Description */}
-          <p className="mx-auto mt-5 max-w-2xl text-sm leading-6 text-slate-400 sm:text-base sm:leading-7">
-            Get the guidance, practical skills, and confidence you need to
-            pursue new opportunities and build a successful career.
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 lg:text-lg">
+            Whether you&apos;re a professional looking for your next
+            opportunity, a business looking for support, or an organization
+            looking for the right vendors and partners, Seven Sigma Solutions is
+            here to help.
           </p>
 
-          {/* Buttons */}
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <Link
-              to="/contact"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-md bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-600/20 sm:w-auto"
-            >
-              Get Career Guidance
-              <FiArrowUpRight
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link>
-
-            <Link
-              to="/about"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-md border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:border-blue-500/50 hover:bg-blue-500/5 sm:w-auto"
-            >
-              Learn About Us
-              <FiArrowUpRight
-                size={17}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              />
-            </Link>
-          </div>
+          <GlobalCTA />
         </motion.div>
       </section>
     </main>

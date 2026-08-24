@@ -1,55 +1,56 @@
 import { motion } from "framer-motion";
 import {
-  FiArrowRight,
-  FiBookOpen,
-  FiCheckCircle,
-  FiMessageSquare,
-  FiTarget,
   FiUsers,
+  FiLayers,
+  FiBriefcase,
+  FiLink,
+  FiTrendingUp,
+  FiShield,
 } from "react-icons/fi";
+import GlobalCTA from "../components/common/GlobalCTA";
 
-const benefits = [
+const reasons = [
   {
     number: "01",
-    title: "Personalized Mentorship",
+    title: "Personalized Approach",
     description:
-      "Receive individual guidance from experienced professionals who understand your career goals, challenges, and professional direction.",
+      "We don’t believe in one-size-fits-all solutions. We take the time to understand your goals, challenges, and priorities before recommending the right solution.",
     icon: FiUsers,
   },
   {
     number: "02",
-    title: "Practical Learning",
+    title: "Multiple Solutions Under One Roof",
     description:
-      "Develop practical, real-world skills that help you become confident and prepared for professional opportunities.",
-    icon: FiBookOpen,
+      "From career development to business support, workforce solutions, and vendor management, we bring multiple capabilities together so you don’t have to search for different partners for every need.",
+    icon: FiLayers,
   },
   {
     number: "03",
-    title: "Industry-Focused Training",
+    title: "People & Business Focused",
     description:
-      "Learn relevant concepts and skills aligned with today's professional environment and employer expectations.",
-    icon: FiTarget,
+      "We understand that behind every business challenge are real people, real operations, and real goals. Our solutions are designed with both people and business needs in mind.",
+    icon: FiBriefcase,
   },
   {
     number: "04",
-    title: "Interview Preparation",
+    title: "Reliable Partnerships",
     description:
-      "Build confidence through mock interviews, technical preparation, behavioral practice, and personalized feedback.",
-    icon: FiMessageSquare,
+      "We focus on building long-term relationships with clients, professionals, and vendors rather than simply completing a transaction.",
+    icon: FiLink,
   },
   {
     number: "05",
-    title: "Individual Attention",
+    title: "Practical & Results Driven",
     description:
-      "Get support tailored to your background, experience, learning needs, and desired career direction.",
-    icon: FiCheckCircle,
+      "Our goal is to provide solutions that can actually be implemented. We focus on clarity, efficiency, practical execution, and measurable value.",
+    icon: FiTrendingUp,
   },
   {
     number: "06",
-    title: "End-to-End Career Support",
+    title: "Professional & Transparent",
     description:
-      "Our guidance continues beyond training with career advice, job search strategies, and ongoing professional support.",
-    icon: FiArrowRight,
+      "We believe successful relationships are built on communication, professionalism, accountability, transparency, and trust.",
+    icon: FiShield,
   },
 ];
 
@@ -79,18 +80,23 @@ const cardVariants = {
 
 const WhyUs = () => {
   return (
-    <main className="min-h-screen overflow-hidden bg-black text-white">
+    <main className="min-h-screen overflow-hidden bg-slate-950 text-white">
       {/* =====================================================
           HERO
       ====================================================== */}
       <section
         data-page-hero
-        className="relative overflow-hidden bg-[#030303] px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-10 lg:pb-28 lg:pt-40"
+        className="relative overflow-hidden bg-slate-950 px-5 pb-20 pt-32 sm:px-8 sm:pb-24 sm:pt-36 lg:px-10 lg:pb-28 lg:pt-40"
       >
         {/* Background Glow */}
         <div className="pointer-events-none absolute -left-40 top-20 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
 
         <div className="pointer-events-none absolute -right-40 bottom-0 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
+
+        {/* Decorative Line */}
+        <div className="pointer-events-none absolute left-0 top-1/2 h-px w-1/4 bg-gradient-to-r from-transparent to-blue-500/20" />
+
+        <div className="pointer-events-none absolute right-0 top-1/2 h-px w-1/4 bg-gradient-to-l from-transparent to-blue-500/20" />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -106,7 +112,7 @@ const WhyUs = () => {
             <span className="h-px w-8 bg-blue-500" />
 
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 sm:text-sm">
-              Why Choose Us
+              Why Seven Sigma Solutions
             </span>
 
             <span className="h-px w-8 bg-blue-500" />
@@ -114,24 +120,24 @@ const WhyUs = () => {
 
           {/* Heading */}
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
-            Your Goals.
+            More Than a Service.
             <br />
-            <span className="text-blue-500">Our Guidance.</span>
+            <span className="text-blue-500">A Solution.</span>
           </h1>
 
           {/* Description */}
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 lg:text-lg">
-            At 7Sigma Solutions, we combine personalized mentorship, practical
-            learning, and continuous career support to help you move forward
-            with confidence.
+            Choosing the right partner matters. At Seven Sigma Solutions, we
+            focus on understanding your needs before recommending a solution
+            that creates practical and meaningful value.
           </p>
         </motion.div>
       </section>
 
       {/* =====================================================
-          BENEFITS
+          REASONS
       ====================================================== */}
-      <section className="relative bg-black px-5 pb-20 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28">
+      <section className="relative bg-slate-950 px-5 pb-20 sm:px-8 sm:pb-24 lg:px-10 lg:pb-28">
         {/* Decorative Glow */}
         <div className="pointer-events-none absolute -right-40 top-20 h-96 w-96 rounded-full bg-blue-600/10 blur-3xl" />
 
@@ -146,18 +152,18 @@ const WhyUs = () => {
             }}
             className="grid overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] sm:grid-cols-2 lg:grid-cols-3"
           >
-            {benefits.map((benefit) => {
-              const Icon = benefit.icon;
+            {reasons.map((reason) => {
+              const Icon = reason.icon;
 
               return (
                 <motion.article
-                  key={benefit.number}
+                  key={reason.number}
                   variants={cardVariants}
-                  className="group relative border-b border-white/[0.07] bg-[#050505] p-6 transition-all duration-500 hover:bg-[#080808] sm:p-7 lg:p-8"
+                  className="group relative border-b border-white/[0.07] bg-slate-950 p-6 transition-all duration-500 hover:bg-slate-900/70 sm:p-7 lg:p-8"
                 >
                   {/* Number */}
                   <span className="absolute right-6 top-5 text-5xl font-bold tracking-tight text-white/[0.035] transition-colors duration-500 group-hover:text-blue-500/10">
-                    {benefit.number}
+                    {reason.number}
                   </span>
 
                   {/* Icon */}
@@ -168,11 +174,11 @@ const WhyUs = () => {
                   {/* Content */}
                   <div className="relative mt-7">
                     <h2 className="text-lg font-semibold text-white transition-colors duration-300 group-hover:text-blue-400 sm:text-xl">
-                      {benefit.title}
+                      {reason.title}
                     </h2>
 
-                    <p className="mt-3 text-sm leading-6 text-slate-400">
-                      {benefit.description}
+                    <p className="mt-3 text-sm leading-7 text-slate-400">
+                      {reason.description}
                     </p>
                   </div>
 
@@ -188,7 +194,8 @@ const WhyUs = () => {
       {/* =====================================================
           CLOSING STATEMENT
       ====================================================== */}
-      <section className="relative overflow-hidden border-t border-white/[0.06] bg-[#050505] px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+      <section className="relative overflow-hidden border-t border-white/[0.06] bg-slate-900 px-5 py-20 sm:px-8 sm:py-24 lg:px-10 lg:py-28">
+        {/* Center Glow */}
         <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-3xl" />
 
         <motion.div
@@ -204,23 +211,35 @@ const WhyUs = () => {
           }}
           className="relative mx-auto max-w-3xl text-center"
         >
+          {/* Label */}
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 sm:text-sm">
-            Built Around You
+            Built Around Your Needs
           </span>
 
+          {/* Heading */}
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            More Than Training.
+            The Right People.
             <br />
-            <span className="text-blue-500">A Career Partnership.</span>
+            <span className="text-blue-500">The Right Partnerships.</span>
           </h2>
 
+          {/* Description */}
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8">
-            We focus on more than just training. Our goal is to help you build
-            the confidence, skills, and professional direction needed for
-            long-term career growth.
+            Whether you are looking for career support, workforce solutions,
+            business assistance, or reliable partnerships, we focus on
+            understanding your needs and creating solutions that move you
+            forward.
           </p>
+
+          {/* Tagline */}
+          <div className="mt-8 flex items-center justify-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
+            <span className="h-px w-8 bg-slate-700" />
+            <span>Precision. Performance. Excellence.</span>
+            <span className="h-px w-8 bg-slate-700" />
+          </div>
         </motion.div>
       </section>
+      <GlobalCTA />
     </main>
   );
 };

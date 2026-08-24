@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const CTA = () => {
+const GlobalCTA = () => {
   return (
     <section className="relative overflow-hidden bg-slate-950 py-20 sm:py-24 lg:py-28">
       {/* Background Glow */}
@@ -25,7 +25,7 @@ const CTA = () => {
           <span className="h-px w-8 bg-blue-500" />
 
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 sm:text-sm">
-            Let&apos;s Work Together
+            Let&apos;s Build What&apos;s Next
           </span>
 
           <span className="h-px w-8 bg-blue-500" />
@@ -39,8 +39,10 @@ const CTA = () => {
           transition={{ duration: 0.7, delay: 0.1 }}
           className="text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl"
         >
-          Ready to Find the
-          <span className="block text-blue-500">Right Solution?</span>
+          Have a Need?
+          <span className="block text-blue-500">
+            Let&apos;s Find the Right Solution.
+          </span>
         </motion.h2>
 
         {/* Description */}
@@ -49,26 +51,26 @@ const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8"
+          className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8 lg:text-lg"
         >
-          Whether you&apos;re looking for career guidance, business support,
-          workforce solutions, or reliable vendor partnerships, we&apos;re here
-          to help.
+          Whether you&apos;re a professional looking for your next opportunity,
+          a business looking for support, or an organization looking for the
+          right vendors and partners, Seven Sigma Solutions is here to help.
         </motion.p>
 
-        {/* Button */}
+        {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.7, delay: 0.3 }}
-          className="mt-8 flex items-center justify-center"
+          className="mt-8 flex justify-center"
         >
           <Link
             to="/contact"
             className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/20 sm:w-auto"
           >
-            Let&apos;s Work Together
+            Contact Seven Sigma Solutions
             <FiArrowUpRight
               size={18}
               className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
@@ -77,21 +79,22 @@ const CTA = () => {
         </motion.div>
 
         {/* Bottom Tagline */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{
-            duration: 0.8,
-            delay: 0.5,
-          }}
-          className="mt-8 text-xs font-medium uppercase tracking-[0.2em] text-slate-600"
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="mt-9 flex items-center justify-center gap-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-600"
         >
-          Precision. Performance. Excellence.
-        </motion.p>
+          <span className="h-px w-8 bg-slate-700" />
+
+          <span>Precision. Performance. Excellence.</span>
+
+          <span className="h-px w-8 bg-slate-700" />
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default CTA;
+export default GlobalCTA;

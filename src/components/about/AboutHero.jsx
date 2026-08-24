@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-const Hero = () => {
-  const scrollToServices = () => {
-    const section = document.getElementById("services");
+const AboutHero = () => {
+  const scrollToOverview = () => {
+    const section = document.getElementById("about-overview");
 
     if (section) {
       section.scrollIntoView({
@@ -15,20 +15,20 @@ const Hero = () => {
 
   return (
     <section
-      id="home"
-      className="relative flex min-h-screen w-full items-center overflow-hidden bg-slate-950 bg-cover bg-center bg-no-repeat"
+      id="about"
+      className="relative flex min-h-[75vh] w-full items-center overflow-hidden bg-slate-950 bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/images/hero/bg.jpg')",
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-slate-950/65" />
+      <div className="absolute inset-0 bg-slate-950/70" />
 
-      {/* Left-to-Right Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-slate-950/30" />
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/75 to-slate-950/35" />
 
       {/* Bottom Gradient */}
-      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-slate-950/80 to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-slate-950/90 to-transparent" />
 
       {/* Decorative Glow */}
       <div className="pointer-events-none absolute -left-32 top-1/4 h-72 w-72 rounded-full bg-blue-600/20 blur-3xl" />
@@ -36,7 +36,7 @@ const Hero = () => {
       <div className="pointer-events-none absolute -right-32 bottom-1/4 h-72 w-72 rounded-full bg-blue-500/10 blur-3xl" />
 
       {/* Hero Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pt-24 sm:px-8 lg:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 py-24 sm:px-8 lg:px-10">
         <div className="max-w-4xl">
           {/* Eyebrow */}
           <motion.div
@@ -51,7 +51,7 @@ const Hero = () => {
             <span className="h-px w-10 bg-blue-500" />
 
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 sm:text-sm">
-              7Sigma Solutions
+              About Seven Sigma Solutions
             </span>
           </motion.div>
 
@@ -66,9 +66,9 @@ const Hero = () => {
             }}
             className="max-w-4xl text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Connecting People,
+            Precision.
             <br />
-            <span className="text-blue-500">Businesses & Opportunities.</span>
+            <span className="text-blue-500">People. Partnerships.</span>
           </motion.h1>
 
           {/* Description */}
@@ -82,14 +82,12 @@ const Hero = () => {
             }}
             className="mt-6 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8"
           >
-            At 7Sigma Solutions, we provide practical, professional solutions
-            designed to help individuals and businesses move forward with
-            confidence. From career development and workforce support to
-            business solutions and vendor management, we bring people,
-            resources, and opportunities together to create meaningful results.
+            We work with individuals and businesses to provide practical,
+            professional solutions that address real-world challenges and create
+            opportunities for growth.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
@@ -104,23 +102,24 @@ const Hero = () => {
               to="/contact"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 hover:shadow-xl hover:shadow-blue-600/25 sm:px-7"
             >
-              Get Started
+              Let&apos;s Work Together
               <FiArrowUpRight
                 size={18}
                 className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
 
-            <Link
-              to="/services"
+            <button
+              type="button"
+              onClick={scrollToOverview}
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white/50 hover:bg-white/10 sm:px-7"
             >
-              Explore Our Services
-              <FiArrowUpRight
-                size={18}
-                className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              Discover Our Story
+              <FiArrowDown
+                size={17}
+                className="transition-transform duration-300 group-hover:translate-y-1"
               />
-            </Link>
+            </button>
           </motion.div>
 
           {/* Brand Tagline */}
@@ -143,7 +142,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <motion.button
         type="button"
-        onClick={scrollToServices}
+        onClick={scrollToOverview}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{
@@ -151,10 +150,10 @@ const Hero = () => {
           delay: 1,
         }}
         className="absolute bottom-7 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-2 text-slate-400 transition-colors duration-300 hover:text-white"
-        aria-label="Scroll to services"
+        aria-label="Scroll to about overview"
       >
         <span className="text-[10px] font-medium uppercase tracking-[0.25em]">
-          Scroll
+          Explore
         </span>
 
         <motion.span
@@ -175,4 +174,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default AboutHero;
